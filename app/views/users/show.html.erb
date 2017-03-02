@@ -21,7 +21,13 @@
       <dd><%= @user.user_type %></dd>
 
       <dt>Primary instrument</dt>
-      <dd><%= @user.primary_instrument_id %></dd>
+      <dd>
+        <% if @user.primary_instrument.present? %>
+          <a href="/instruments/<%= @user.primary_instrument_id %>">
+            <%= @user.primary_instrument.instrument_name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

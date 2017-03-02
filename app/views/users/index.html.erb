@@ -25,7 +25,13 @@
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
         <td><%= user.user_type %></td>
-        <td><%= user.primary_instrument.instrument_name %></td>
+        <td>
+          <% if user.primary_instrument.present? %>
+            <a href="/instruments/<%= user.primary_instrument.id %>">
+              <%= user.primary_instrument.instrument_name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/users/<%= user.id %>" class="btn btn-primary">Show</a>
         </td>

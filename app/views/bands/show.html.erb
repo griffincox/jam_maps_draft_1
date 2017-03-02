@@ -15,7 +15,13 @@
       <dd><%= @band.primary_genre %></dd>
 
       <dt>Genre</dt>
-      <dd><%= @band.genre_id %></dd>
+      <dd>
+        <% if @band.genre.present? %>
+          <a href="/genres/<%= @band.genre_id %>">
+            <%= @band.genre.genre_name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

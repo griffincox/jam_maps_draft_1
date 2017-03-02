@@ -16,8 +16,20 @@
 
       <% @memberships.each do |membership| %>
       <tr>
-        <td><%= membership.user.email %></td>
-        <td><%= membership.band.name %></td>
+        <td>
+          <% if membership.user.present? %>
+            <a href="/users/<%= membership.user.id %>">
+              <%= membership.user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if membership.band.present? %>
+            <a href="/bands/<%= membership.band.id %>">
+              <%= membership.band.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/memberships/<%= membership.id %>" class="btn btn-primary">Show</a>
           

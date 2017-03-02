@@ -15,7 +15,13 @@
       <dd><%= @gigpost.description %></dd>
 
       <dt>Band</dt>
-      <dd><%= @gigpost.band_id %></dd>
+      <dd>
+        <% if @gigpost.band.present? %>
+          <a href="/bands/<%= @gigpost.band_id %>">
+            <%= @gigpost.band.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
