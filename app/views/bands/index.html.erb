@@ -21,7 +21,7 @@
         <td><%= band.name %></td>
         <td><%= band.description %></td>
         <td><%= band.primary_genre %></td>
-        <td><%= band.genre_id %></td>
+        <td><%= band.genre.genre_name %></td>
         <td>
           <a href="/bands/<%= band.id %>" class="btn btn-primary">Show</a>
           <a href="/bands/<%= band.id %>/edit" class="btn btn-warning">Edit</a>
