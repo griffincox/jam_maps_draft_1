@@ -6,6 +6,7 @@ class InstrumentsController < ApplicationController
   end
 
   def show
+    @user = User.new
     @instrument = Instrument.find(params[:id])
 
     render("instruments/show.html.erb")

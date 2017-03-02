@@ -6,6 +6,9 @@ class BandsController < ApplicationController
   end
 
   def show
+    @post = Post.new
+    @gigpost = Gigpost.new
+    @membership = Membership.new
     @band = Band.find(params[:id])
 
     render("bands/show.html.erb")

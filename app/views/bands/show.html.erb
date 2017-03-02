@@ -60,6 +60,23 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_membership" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for band_id -->
+      <input type="hidden" name="band_id" value="<%= @band.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Membership
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -91,6 +108,47 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_gigpost" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for hourly_price -->
+      <div class="form-group">
+        <label for="hourly_price" class="control-label">
+          Hourly price
+        </label>
+
+        <input type="text" id="hourly_price" name="hourly_price" placeholder="Hourly price" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for title -->
+      <div class="form-group">
+        <label for="title" class="control-label">
+          Title
+        </label>
+
+        <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for band_id -->
+      <input type="hidden" name="band_id" value="<%= @band.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Gigpost
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -122,6 +180,47 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_post" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for title -->
+      <div class="form-group">
+        <label for="title" class="control-label">
+          Title
+        </label>
+
+        <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for url -->
+      <div class="form-group">
+        <label for="url" class="control-label">
+          Url
+        </label>
+
+        <input type="text" id="url" name="url" placeholder="Url" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for caption -->
+      <div class="form-group">
+        <label for="caption" class="control-label">
+          Caption
+        </label>
+
+        <input type="text" id="caption" name="caption" placeholder="Caption" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for band_id -->
+      <input type="hidden" name="band_id" value="<%= @band.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Post
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
