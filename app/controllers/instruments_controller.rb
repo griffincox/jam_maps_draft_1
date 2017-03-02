@@ -1,6 +1,6 @@
 class InstrumentsController < ApplicationController
   def index
-    @instruments = Instrument.all
+    @instruments = Instrument.page(params[:page]).per(10)
 
     render("instruments/index.html.erb")
   end

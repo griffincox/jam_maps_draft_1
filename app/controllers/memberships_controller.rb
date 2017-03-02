@@ -10,7 +10,7 @@ class MembershipsController < ApplicationController
   end
 
   def index
-    @memberships = Membership.all
+    @memberships = Membership.page(params[:page]).per(10)
 
     render("memberships/index.html.erb")
   end

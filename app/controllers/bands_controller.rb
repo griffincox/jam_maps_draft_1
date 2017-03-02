@@ -1,6 +1,6 @@
 class BandsController < ApplicationController
   def index
-    @bands = Band.all
+    @bands = Band.page(params[:page]).per(10)
 
     render("bands/index.html.erb")
   end

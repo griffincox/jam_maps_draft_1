@@ -1,6 +1,6 @@
 class GigpostsController < ApplicationController
   def index
-    @gigposts = Gigpost.all
+    @gigposts = Gigpost.page(params[:page]).per(10)
 
     render("gigposts/index.html.erb")
   end
