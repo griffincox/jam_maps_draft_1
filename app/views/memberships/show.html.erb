@@ -17,12 +17,14 @@
       <a href="/memberships" class="btn btn-primary">
         Back
       </a>
-      <a href="/memberships/<%= @membership.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_membership/<%= @membership.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @membership.user %>
+        <a href="/memberships/<%= @membership.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_membership/<%= @membership.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>

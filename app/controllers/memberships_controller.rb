@@ -1,4 +1,14 @@
 class MembershipsController < ApplicationController
+  before_action :current_user_must_be_membership_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_membership_user
+    membership = Membership.find(params[:id])
+
+    unless current_user == membership.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @memberships = Membership.all
 

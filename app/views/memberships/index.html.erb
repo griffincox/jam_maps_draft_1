@@ -20,8 +20,11 @@
         <td><%= membership.band.name %></td>
         <td>
           <a href="/memberships/<%= membership.id %>" class="btn btn-primary">Show</a>
-          <a href="/memberships/<%= membership.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_membership/<%= membership.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == membership.user %>
+            <a href="/memberships/<%= membership.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_membership/<%= membership.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>
