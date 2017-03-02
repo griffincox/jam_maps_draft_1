@@ -1,0 +1,1 @@
+{"name":"Jam Maps Draft 1","repository":"https://github.com/griffincox/jam_maps_draft_1","env":{"CLOUDINARY_CLOUD_NAME":{"required":true},"CLOUDINARY_API_KEY":{"required":true},"CLOUDINARY_API_SECRET":{"required":true},"ROLLBAR_ACCESS_TOKEN":{"required":true}}}
