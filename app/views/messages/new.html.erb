@@ -33,7 +33,7 @@
           From user
         </label>
 
-        <input type="text" id="from_user_id" name="from_user_id" placeholder="From user" class="form-control" value="<%= @message.from_user_id %>">
+        <%= select_tag(:from_user_id, options_from_collection_for_select(User.all, :id, :email, @message.from_user_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for body -->
