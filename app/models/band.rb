@@ -1,6 +1,9 @@
 class Band < ApplicationRecord
   # Direct associations
 
+  has_many   :posts,
+             :dependent => :destroy
+
   has_many   :gigposts,
              :dependent => :destroy
 
