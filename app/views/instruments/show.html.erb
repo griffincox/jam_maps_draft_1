@@ -1,0 +1,25 @@
+<div class="page-header">
+  <h3>Instrument #<%= @instrument.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Instrument name</dt>
+      <dd><%= @instrument.instrument_name %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/instruments" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/instruments/<%= @instrument.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_instrument/<%= @instrument.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

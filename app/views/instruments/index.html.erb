@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h1>
+    Instruments
+    <a href="/instruments/new" class="btn btn-lg btn-success">New Instrument</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Instrument name</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @instruments.each do |instrument| %>
+      <tr>
+        <td><%= instrument.instrument_name %></td>
+        <td>
+          <a href="/instruments/<%= instrument.id %>" class="btn btn-primary">Show</a>
+          <a href="/instruments/<%= instrument.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_instrument/<%= instrument.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

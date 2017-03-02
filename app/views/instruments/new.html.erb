@@ -1,0 +1,37 @@
+<!-- Validation failure messages -->
+<% if @instrument.errors.any? %>
+  <% @instrument.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Instrument</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_instrument" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for instrument_name -->
+      <div class="form-group">
+        <label for="instrument_name" class="control-label">
+          Instrument name
+        </label>
+
+        <input type="text" id="instrument_name" name="instrument_name" placeholder="Instrument name" class="form-control" value="<%= @instrument.instrument_name %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Instrument
+      </button>
+      or
+      <a href="/instruments">Cancel</a>
+    </form>
+  </div>
+</div>

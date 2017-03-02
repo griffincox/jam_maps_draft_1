@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Instrument resource:
+  # CREATE
+  get "/instruments/new", :controller => "instruments", :action => "new"
+  post "/create_instrument", :controller => "instruments", :action => "create"
+
+  # READ
+  get "/instruments", :controller => "instruments", :action => "index"
+  get "/instruments/:id", :controller => "instruments", :action => "show"
+
+  # UPDATE
+  get "/instruments/:id/edit", :controller => "instruments", :action => "edit"
+  post "/update_instrument/:id", :controller => "instruments", :action => "update"
+
+  # DELETE
+  get "/delete_instrument/:id", :controller => "instruments", :action => "destroy"
+  #------------------------------
+
   # Routes for the Genre resource:
   # CREATE
   get "/genres/new", :controller => "genres", :action => "new"
