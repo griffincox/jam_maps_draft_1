@@ -1,5 +1,7 @@
 ActiveAdmin.register Instrument do
 
+ permit_params :instrument_name
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
