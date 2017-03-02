@@ -14,6 +14,10 @@ class Band < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :users,
+             :through => :memberships,
+             :source => :user
+
   # Validations
 
 end

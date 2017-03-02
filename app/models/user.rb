@@ -19,6 +19,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :bands,
+             :through => :memberships,
+             :source => :band
+
   # Validations
 
   # Include default devise modules. Others available are:
