@@ -1,6 +1,7 @@
 class InstrumentsController < ApplicationController
   def index
-    @instruments = Instrument.page(params[:page]).per(10)
+    @q = Instrument.ransack(params[:q])
+    @instruments = @q.result(:distinct => true).includes(:users).page(params[:page]).per(10)
 
     render("instruments/index.html.erb")
   end

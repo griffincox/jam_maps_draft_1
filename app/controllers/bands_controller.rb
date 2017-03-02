@@ -1,6 +1,7 @@
 class BandsController < ApplicationController
   def index
-    @bands = Band.page(params[:page]).per(10)
+    @q = Band.ransack(params[:q])
+    @bands = @q.result(:distinct => true).includes(:memberships, :gigposts, :posts, :genre, :users).page(params[:page]).per(10)
 
     render("bands/index.html.erb")
   end

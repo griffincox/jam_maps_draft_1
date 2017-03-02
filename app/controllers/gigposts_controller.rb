@@ -1,6 +1,7 @@
 class GigpostsController < ApplicationController
   def index
-    @gigposts = Gigpost.page(params[:page]).per(10)
+    @q = Gigpost.ransack(params[:q])
+    @gigposts = @q.result(:distinct => true).includes(:band).page(params[:page]).per(10)
 
     render("gigposts/index.html.erb")
   end
