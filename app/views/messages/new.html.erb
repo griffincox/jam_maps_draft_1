@@ -24,7 +24,7 @@
           To user
         </label>
 
-        <input type="text" id="to_user_id" name="to_user_id" placeholder="To user" class="form-control" value="<%= @message.to_user_id %>">
+        <%= select_tag(:to_user_id, options_from_collection_for_select(User.all, :id, :email, @message.to_user_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for from_user_id -->
