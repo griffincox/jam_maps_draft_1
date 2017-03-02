@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "messages#index"
   # Routes for the Post resource:
   # CREATE
   get "/posts/new", :controller => "posts", :action => "new"
