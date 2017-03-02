@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  belongs_to :primary_instrument,
+             :class_name => "Instrument"
+
   has_many   :from_messages,
              :class_name => "Message",
              :foreign_key => "from_user_id",
