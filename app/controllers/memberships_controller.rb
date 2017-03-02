@@ -47,8 +47,6 @@ class MembershipsController < ApplicationController
 
   def update
     @membership = Membership.find(params[:id])
-
-    @membership.user_id = params[:user_id]
     @membership.band_id = params[:band_id]
 
     save_status = @membership.save
