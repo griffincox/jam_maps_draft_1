@@ -1,6 +1,8 @@
 class Band < ApplicationRecord
   # Direct associations
 
+  belongs_to :genre
+
   has_many   :posts,
              :dependent => :destroy
 
