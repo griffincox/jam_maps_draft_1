@@ -16,7 +16,7 @@
 
       <% @memberships.each do |membership| %>
       <tr>
-        <td><%= membership.user_id %></td>
+        <td><%= membership.user.email %></td>
         <td><%= membership.band_id %></td>
         <td>
           <a href="/memberships/<%= membership.id %>" class="btn btn-primary">Show</a>
