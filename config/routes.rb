@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Band resource:
+  # CREATE
+  get "/bands/new", :controller => "bands", :action => "new"
+  post "/create_band", :controller => "bands", :action => "create"
+
+  # READ
+  get "/bands", :controller => "bands", :action => "index"
+  get "/bands/:id", :controller => "bands", :action => "show"
+
+  # UPDATE
+  get "/bands/:id/edit", :controller => "bands", :action => "edit"
+  post "/update_band/:id", :controller => "bands", :action => "update"
+
+  # DELETE
+  get "/delete_band/:id", :controller => "bands", :action => "destroy"
+  #------------------------------
+
   # Routes for the Gigpost resource:
   # CREATE
   get "/gigposts/new", :controller => "gigposts", :action => "new"
