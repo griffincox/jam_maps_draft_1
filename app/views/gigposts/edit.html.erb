@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @gigpost.errors.any? %>
+  <% @gigpost.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Gigpost #<%= @gigpost.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_gigpost/<%= @gigpost.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for hourly_price -->
+      <div class="form-group">
+        <label for="hourly_price" class="control-label">
+          Hourly price
+        </label>
+
+        <input type="text" id="hourly_price" name="hourly_price" placeholder="Hourly price" class="form-control" value="<%= @gigpost.hourly_price %>">
+      </div>
+
+      <!-- Label and input for title -->
+      <div class="form-group">
+        <label for="title" class="control-label">
+          Title
+        </label>
+
+        <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="<%= @gigpost.title %>">
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="<%= @gigpost.description %>">
+      </div>
+
+      <!-- Label and input for band_id -->
+      <div class="form-group">
+        <label for="band_id" class="control-label">
+          Band
+        </label>
+
+        <input type="text" id="band_id" name="band_id" placeholder="Band" class="form-control" value="<%= @gigpost.band_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Gigpost
+      </button>
+      or
+      <a href="/gigposts/<%= @gigpost.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

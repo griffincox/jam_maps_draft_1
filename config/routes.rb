@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Gigpost resource:
+  # CREATE
+  get "/gigposts/new", :controller => "gigposts", :action => "new"
+  post "/create_gigpost", :controller => "gigposts", :action => "create"
+
+  # READ
+  get "/gigposts", :controller => "gigposts", :action => "index"
+  get "/gigposts/:id", :controller => "gigposts", :action => "show"
+
+  # UPDATE
+  get "/gigposts/:id/edit", :controller => "gigposts", :action => "edit"
+  post "/update_gigpost/:id", :controller => "gigposts", :action => "update"
+
+  # DELETE
+  get "/delete_gigpost/:id", :controller => "gigposts", :action => "destroy"
+  #------------------------------
+
   # Routes for the Membership resource:
   # CREATE
   get "/memberships/new", :controller => "memberships", :action => "new"

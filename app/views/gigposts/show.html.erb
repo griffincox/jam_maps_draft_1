@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>Gigpost #<%= @gigpost.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Hourly price</dt>
+      <dd><%= @gigpost.hourly_price %></dd>
+
+      <dt>Title</dt>
+      <dd><%= @gigpost.title %></dd>
+
+      <dt>Description</dt>
+      <dd><%= @gigpost.description %></dd>
+
+      <dt>Band</dt>
+      <dd><%= @gigpost.band_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/gigposts" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/gigposts/<%= @gigpost.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_gigpost/<%= @gigpost.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
