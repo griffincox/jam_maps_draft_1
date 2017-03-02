@@ -51,7 +51,7 @@
           Band
         </label>
 
-        <input type="text" id="band_id" name="band_id" placeholder="Band" class="form-control" value="<%= @post.band_id %>">
+        <%= select_tag(:band_id, options_from_collection_for_select(Band.all, :id, :name, @post.band_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
